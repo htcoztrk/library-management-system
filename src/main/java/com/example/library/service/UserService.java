@@ -7,7 +7,7 @@ import com.example.library.domain.User;
 
 public interface UserService {
 
-	
+	Optional<User> add(User user);
 	Optional<User> update(User user);
 	Optional<User> findById(int id);
 	List<User> findAll();
