@@ -1,0 +1,11 @@
+package com.example.library.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.library.domain.Author;
+
+public interface AuthorRepository extends JpaRepository<Author,Long>{
+
+	//burada isme gore arama methodu.
+	Author findByFullName(String fullname);
+}
