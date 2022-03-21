@@ -5,26 +5,29 @@ import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.example.library.domain.Author;
 import com.example.library.dto.request.AuthorRequest;
 import com.example.library.dto.response.AuthorResponse;
-import com.google.common.base.Objects;
+import com.example.library.entity.Author;
 
 @Configuration
 public class ModelMapperConfig {
-	private static final Converter<AuthorRequest, Author> CONVERT_AUTHOR_REQUEST_TO_AUTHOR = (context) -> {
-		var author = context.getDestination();
+	private static final Converter<AuthorRequest, Author>
+	CONVERT_AUTHOR_REQUEST_TO_AUTHOR = (context) -> {
+		var author =
+			context.getDestination();
 		var updatedAuthorReq = context.getSource();
 		author.setFullName(updatedAuthorReq.getFullName());
-		author.setId(updatedAuthorReq.getId());
+		//author.setId(updatedAuthorReq.getId());
 		return author;
 
 	};
-	private static final Converter<Author,AuthorResponse> CONVERT_AUTHOR_TO_AUTHOR_RESPONSE = (context) -> {
-		var response = context.getDestination();
+	private static final Converter<Author,AuthorResponse> 
+	CONVERT_AUTHOR_TO_AUTHOR_RESPONSE = (context) -> {
+		var response = 
+				context.getDestination();
 		var author = context.getSource();
 		response.setFullName(author.getFullName());
-		
+		response.setId(author.getId());
 		return response;
 
 	};

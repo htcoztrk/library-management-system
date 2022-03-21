@@ -9,25 +9,25 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.library.domain.Ogrenci;
-import com.example.library.domain.User;
-import com.example.library.service.OgrenciService;
+import com.example.library.entity.Student;
+import com.example.library.entity.User;
+import com.example.library.service.StudentService;
 
 @RestController
 @RequestMapping("/ogrenci")
-public class OgrenciController {
-    private OgrenciService ogrenciService;
+public class StudentController {
+    private StudentService studentService;
 
-	public OgrenciController(OgrenciService ogrenciService) {
+	public StudentController(StudentService studentService) {
 		
-		this.ogrenciService = ogrenciService;
+		this.studentService = studentService;
 	}
 	@GetMapping("/getall")
-	public Optional<List<Ogrenci>> getAll(){
-	    return ogrenciService.getAll();	
+	public Optional<List<Student>> getAll(){
+	    return studentService.getAll();	
 	}
 	@PostMapping("/adduser")
-	public User addUser(@RequestBody Ogrenci ogrenci) {
-		return ogrenciService.add(ogrenci);
+	public User addUser(@RequestBody Student ogrenci) {
+		return studentService.add(ogrenci);
 	}
 }

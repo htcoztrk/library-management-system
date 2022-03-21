@@ -5,8 +5,8 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.example.library.domain.Graduate;
-import com.example.library.domain.User;
+import com.example.library.entity.Graduate;
+import com.example.library.entity.User;
 import com.example.library.repository.GraduateRepository;
 
 @Service

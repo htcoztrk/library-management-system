@@ -1,9 +1,9 @@
-package com.example.library.domain;
+package com.example.library.entity;
 
 import javax.persistence.Entity;
 
 @Entity
-public class Memur extends User{
+public class Officer extends User{
  private String sicilNo;
 
 public String getSicilNo() {

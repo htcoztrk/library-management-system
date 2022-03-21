@@ -1,9 +1,9 @@
-package com.example.library.domain;
+package com.example.library.entity;
 
 import javax.persistence.Entity;
 
 @Entity
-public class Ogrenci extends User{
+public class Student extends User{
 
 	private String faculty;
 

@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.annotation.RequestScope;
 
-import com.example.library.domain.Author;
 import com.example.library.dto.request.AuthorRequest;
 import com.example.library.dto.response.AuthorResponse;
+import com.example.library.entity.Author;
 import com.example.library.service.AuthorService;
 
 @RestController
@@ -26,13 +26,13 @@ public class AuthorController {
 		this.authorService = authorService;
 	}
 	@PostMapping()
-	public Author addAuthor(@RequestBody Author request) {
+	public AuthorResponse addAuthor(@RequestBody AuthorRequest request) {
 		
 		return authorService.add(request);
 	}
-	@PutMapping(value = "{identity}")
+	/*@PutMapping(value = "{identity}")
 	public Author updateAuthor(@PathVariable Long identity,@RequestBody Author request) {
 		
 		return authorService.update(identity, request);
-	}
+	}*/
 }

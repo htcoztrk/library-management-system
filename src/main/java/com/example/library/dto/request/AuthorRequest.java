@@ -7,7 +7,8 @@ import lombok.Data;
 public class AuthorRequest {
 
 	private Long id;
-	
+	private String fullName;
+
 	public Long getId() {
 		return id;
 	}
@@ -16,8 +17,7 @@ public class AuthorRequest {
 		this.id = id;
 	}
 
-	private String fullName;
-
+	
 	public String getFullName() {
 		return fullName;
 	}

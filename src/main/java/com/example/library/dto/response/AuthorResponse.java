@@ -3,10 +3,13 @@ package com.example.library.dto.response;
 import java.util.Objects;
 
 public class AuthorResponse {
-	
+
 	private Long id;
 	private String fullName;
-	
+
+	public AuthorResponse() {
+
+	}
 
 	public Long getId() {
 		return id;
@@ -14,12 +17,6 @@ public class AuthorResponse {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	
-
-	public AuthorResponse() {
-		
 	}
 
 	public String getFullName() {
@@ -30,7 +27,4 @@ public class AuthorResponse {
 		this.fullName = fullName;
 	}
 
-	
-	
-	
 }

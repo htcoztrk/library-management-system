@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.library.domain.Graduate;
-import com.example.library.domain.User;
+import com.example.library.entity.Graduate;
+import com.example.library.entity.User;
 import com.example.library.service.GraduateService;
 
 @RestController

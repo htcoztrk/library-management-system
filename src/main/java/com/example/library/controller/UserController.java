@@ -3,7 +3,6 @@ package com.example.library.controller;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,8 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.annotation.RequestScope;
 
-import com.example.library.domain.Ogrenci;
-import com.example.library.domain.User;
+import com.example.library.entity.User;
 import com.example.library.service.UserService;
 import com.example.library.service.UserServiceImp;
 
