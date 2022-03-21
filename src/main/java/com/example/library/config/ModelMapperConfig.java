@@ -1,10 +1,8 @@
 package com.example.library.config;
 
-import org.modelmapper.Converter;
-import org.modelmapper.ModelMapper;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+<<<<<<< HEAD
 import com.example.library.dto.request.AuthorRequest;
 import com.example.library.dto.response.AuthorResponse;
 import com.example.library.entity.Author;
@@ -41,4 +39,10 @@ public class ModelMapperConfig {
 		return mapper;
 	}
 	
+=======
+@Configuration
+public class ModelMapperConfig {
+	 //khaduıhesfuı
+	private String nameString;
+>>>>>>> 7bcbe962448c2bdc3b26db54c60cdda246ae693d
 }
