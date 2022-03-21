@@ -1,8 +1,11 @@
 package com.example.library.config;
 
+import org.modelmapper.Converter;
+import org.modelmapper.ModelMapper;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-<<<<<<< HEAD
+
 import com.example.library.dto.request.AuthorRequest;
 import com.example.library.dto.response.AuthorResponse;
 import com.example.library.entity.Author;
@@ -11,9 +14,10 @@ import com.example.library.entity.Author;
 public class ModelMapperConfig {
 	private static final Converter<AuthorRequest, Author>
 	CONVERT_AUTHOR_REQUEST_TO_AUTHOR = (context) -> {
-		var author =
-			context.getDestination();
+		
 		var updatedAuthorReq = context.getSource();
+		var author =
+				context.getDestination();
 		author.setFullName(updatedAuthorReq.getFullName());
 		//author.setId(updatedAuthorReq.getId());
 		return author;
@@ -21,8 +25,8 @@ public class ModelMapperConfig {
 	};
 	private static final Converter<Author,AuthorResponse> 
 	CONVERT_AUTHOR_TO_AUTHOR_RESPONSE = (context) -> {
-		var response = 
-				context.getDestination();
+		var response = new AuthorResponse();
+				//context.getDestination();
 		var author = context.getSource();
 		response.setFullName(author.getFullName());
 		response.setId(author.getId());
@@ -39,10 +43,5 @@ public class ModelMapperConfig {
 		return mapper;
 	}
 	
-=======
-@Configuration
-public class ModelMapperConfig {
-	 //khaduıhesfuı
-	private String nameString;
->>>>>>> 7bcbe962448c2bdc3b26db54c60cdda246ae693d
 }
+

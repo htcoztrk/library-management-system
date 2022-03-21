@@ -4,7 +4,7 @@ import java.util.Objects;
 
 import lombok.Data;
 
-public class AuthorRequest {
+public class AuthorAddRequest {
 
 	//private Long id;
 	private String fullName;
@@ -45,7 +45,7 @@ public class AuthorRequest {
 //		return Objects.equals(id, other.id);
 //	}
 
-	public AuthorRequest() {
+	public AuthorAddRequest() {
 		
 	}
 	
