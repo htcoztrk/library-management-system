@@ -1,9 +1,5 @@
 package com.example.library.dto.request;
 
-import java.util.Objects;
-
-import lombok.Data;
-
 public class AuthorAddRequest {
 
 	//private Long id;

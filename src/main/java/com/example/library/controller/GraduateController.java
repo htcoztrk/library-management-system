@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.library.entity.Graduate;
-import com.example.library.entity.User;
 import com.example.library.service.GraduateService;
 
 @RestController
@@ -26,8 +25,8 @@ public class GraduateController {
 	public Optional<List<Graduate>> getAll(){
 	    return graduateService.findAll();	
 	}
-	@PostMapping("/adduser")
-	public Optional<User> addUser(@RequestBody Graduate graduate) {
+	@PostMapping("/addGradute")
+	public Graduate addUser(@RequestBody Graduate graduate) {
 		return graduateService.add(graduate);
 	}
 }
