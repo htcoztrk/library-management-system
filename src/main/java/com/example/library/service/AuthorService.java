@@ -29,9 +29,7 @@ public class AuthorService {
 	@Transactional
 	public AuthorResponse add(AuthorAddRequest request) {
 		var author = modelMapper.map(request, Author.class);
-
 		return modelMapper.map(authorRepository.save(author), AuthorResponse.class);
-
 	}
 
 	@Transactional(dontRollbackOn = RuntimeException.class)

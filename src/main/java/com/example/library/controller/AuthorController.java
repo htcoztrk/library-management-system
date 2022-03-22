@@ -33,12 +33,14 @@ public class AuthorController {
 		return authorService.add(request);
 	}
 	@PutMapping(value = "{identity}")
-	public AuthorResponse updateAuthor(@PathVariable Long identity,@RequestBody AuthorRequest request) {
+	public AuthorResponse updateAuthor(@PathVariable Long identity,
+									   @RequestBody AuthorRequest request) {
 		
 		return authorService.update(identity, request);
 	}
 	@DeleteMapping(value="{id}")
 	public Author delete(@PathVariable Long id) {
+
 		return authorService.deleteById(id);
 	}
 }
