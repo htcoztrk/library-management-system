@@ -60,7 +60,8 @@ public class AuthorService {
 	}
 
 	public AuthorResponse getById(Long id) {
-		return modelMapper.map(authorRepository.findById(id), AuthorResponse.class);
+		return modelMapper.map(authorRepository.findById(id)
+				.orElseThrow(()->new EntityNotFoundException()), AuthorResponse.class);
 	}
 
 	public List<AuthorResponse> getAll() {
@@ -70,3 +71,11 @@ public class AuthorService {
 	}
 
 }
+
+
+
+
+
+
+
+
