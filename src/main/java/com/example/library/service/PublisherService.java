@@ -38,8 +38,8 @@ public class PublisherService {
     public Publisher deleteById(Long id) {
         var deletedPublisher = publisherRepository.findById(id).orElseThrow();
         publisherRepository.deleteById(id);
-        if(id==2)
-            throw new RuntimeException();
+        //if(id==2)
+          //  throw new RuntimeException();
         return deletedPublisher;
     }
 
