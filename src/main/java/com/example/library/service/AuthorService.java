@@ -32,28 +32,28 @@ public class AuthorService {
 		return modelMapper.map(authorRepository.save(author), AuthorResponse.class);
 	}
 
-	@Transactional(dontRollbackOn = RuntimeException.class)
+	//@Transactional(dontRollbackOn = RuntimeException.class)
 	public Author deleteById(Long id) {
 		var deletedAuthor = authorRepository.findById(id).orElseThrow();
 		authorRepository.deleteById(id);
-		if(id==2)
-			throw new RuntimeException();
+		//if(id==2)
+		//	throw new RuntimeException();
 		return deletedAuthor;
 	}
 
-	@Transactional(dontRollbackOn = EntityExistsException.class)
+	//@Transactional(dontRollbackOn = EntityExistsException.class)
 	//veritabanından alıyor, aldığı veriyi yonetiyor
+	@Transactional
 	public AuthorResponse update(Long identity, AuthorRequest request) {
 		var updated = authorRepository.findById(identity).orElseThrow(()->new EntityNotFoundException());
 		modelMapper.map(request, updated);
-		if(identity==2) {
+		/*if(identity==2) {
 			throw new EntityExistsException();
-		}
+		}*/
 		
 		
 		//updated.setFullName(request.getFullName());
-		return null;
-				//modelMapper.map(authorRepository.save(updated), AuthorResponse.class);
+		return modelMapper.map(authorRepository.save(updated), AuthorResponse.class);
 
 	}
 
