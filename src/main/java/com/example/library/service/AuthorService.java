@@ -46,12 +46,7 @@ public class AuthorService {
 	public AuthorResponse update(Long identity, AuthorRequest request) {
 		var updated = authorRepository.findById(identity).orElseThrow(()->new EntityNotFoundException());
 		modelMapper.map(request, updated);
-		/*if(identity==2) {
-			throw new EntityExistsException();
-		}*/
 		
-		
-		//updated.setFullName(request.getFullName());
 		return modelMapper.map(authorRepository.save(updated), AuthorResponse.class);
 
 	}
