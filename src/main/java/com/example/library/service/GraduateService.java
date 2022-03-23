@@ -19,9 +19,9 @@ public class GraduateService{
 	}
 
 	
-	public Optional<User> add(Graduate graduate) {
+	public Graduate add(Graduate graduate) {
 		var addedGraduate=graduateRepository.save(graduate);
-		return Optional.of(addedGraduate);
+		return addedGraduate;
 	}
 
 	public Optional<Graduate> update(Graduate graduate) {

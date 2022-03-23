@@ -2,8 +2,13 @@ package com.example.library.entity;
 
 import javax.persistence.Entity;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 @Entity
-public class Student extends User{
+@NoArgsConstructor
+@AllArgsConstructor
+public class Student extends User {
 
 	private String faculty;
 

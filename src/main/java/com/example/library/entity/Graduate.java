@@ -1,19 +1,29 @@
 package com.example.library.entity;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import lombok.NoArgsConstructor;
+
 @Entity
-public class Graduate extends Student{
-   private LocalDateTime graduatedYear;
+@NoArgsConstructor
+public class Graduate extends Student {
 
-public LocalDateTime getGraduatedYear() {
-	return graduatedYear;
-}
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+	private LocalDate graduatedDate;
 
-public void setGraduatedYear(LocalDateTime graduatedYear) {
-	this.graduatedYear = graduatedYear;
-}
+	public LocalDate getGraduatedDate() {
+		return graduatedDate;
+	}
 
+	public void setGraduatedDate(LocalDate graduatedDate) {
+		this.graduatedDate = graduatedDate;
+	}
+	
+	
+
+	
 }
