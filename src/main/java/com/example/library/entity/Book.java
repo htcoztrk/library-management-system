@@ -1,6 +1,7 @@
 package com.example.library.entity;
 
 import java.sql.Date;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
@@ -13,6 +14,7 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.DynamicUpdate;
 
+import antlr.collections.List;
 import lombok.Data;
 
 @Entity
@@ -31,8 +33,8 @@ public class Book {
 	@NotNull
 	private String title;
 	private String qrCode;
-	private Date pressDate;
-	@Enumerated
-	private BookType bookType;
-	//private Publisher publisher;
+	//private Date pressDate;
+	//private BookType bookType;
+	//private Set<Borrow> borrowList;
+	
 }
