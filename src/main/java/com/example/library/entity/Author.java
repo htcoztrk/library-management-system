@@ -9,19 +9,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
-
-import org.hibernate.annotations.DynamicUpdate;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "authors")
-@DynamicUpdate
 public class Author {
 
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	//@NotNull(message="name can not be null")
+	@NotNull(message="name can not be null")
 	@NotBlank(message="name can not be blank")
 	@Column(name = "fullname")
 	private String fullName;

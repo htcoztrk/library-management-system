@@ -1,5 +1,7 @@
 package com.example.library.dto.response;
 
+import java.util.Objects;
+
 public class AuthorResponse {
 
 	private Long id;
