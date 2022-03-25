@@ -26,11 +26,11 @@ public class Book {
 	private Long id;
 	@NotBlank(message="isbn can not be blank")
 	private String  isbn;
-	//private Author author;
+	private Author author;
 	@NotBlank(message="title can not be blank")
 	@NotNull
 	private String title;
-	private String qrCode;
+	private byte[] qrCode;
 	private Date pressDate;
 	@Enumerated
 	private BookType bookType;
