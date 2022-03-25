@@ -1,6 +1,5 @@
 package com.example.library.entity;
 
-import java.sql.Date;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
@@ -24,7 +23,6 @@ import lombok.Data;
 @Table(name="books")
 @DynamicUpdate
 public class Book {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -36,9 +34,11 @@ public class Book {
 	@NotNull
 	private String title;
 	private byte[] qrCode;
+	@ManyToOne()
 	private Category category;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private LocalDate pressDate;
+	@ManyToOne()
 	private Publisher publisher;
 	@Enumerated
 	private BookType bookType;
