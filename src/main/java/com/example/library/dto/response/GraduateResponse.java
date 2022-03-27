@@ -1,4 +1,6 @@
-package com.example.library.dto.request;
+package com.example.library.dto.response;
+
+import java.time.LocalDate;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,8 +9,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class GraduateAddRequest {
-	private Long userId;
+public class GraduateResponse {
+	private Long studentId;
+	private String faculty;
 	private String username;
 	private String password;
 	private String pinCode;
@@ -16,5 +19,7 @@ public class GraduateAddRequest {
 	private String surname;
 	private String email;
 	private String phone;
-	
+	private LocalDate registeredDate ;
+	private LocalDate graduatedDate;
+
 }

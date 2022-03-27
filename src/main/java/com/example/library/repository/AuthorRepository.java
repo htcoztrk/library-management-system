@@ -7,5 +7,5 @@ import com.example.library.entity.Author;
 public interface AuthorRepository extends JpaRepository<Author,Long>{
 
 	//burada isme gore arama methodu.
-	Author findByFullName(String fullname);
+	 Author findByFullName(String fullname);
 }
