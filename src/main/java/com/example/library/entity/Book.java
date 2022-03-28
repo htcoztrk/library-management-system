@@ -21,7 +21,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 @Data
-
 @Entity
 @Table(name="books")
 @DynamicUpdate
