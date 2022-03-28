@@ -42,7 +42,10 @@ public class StudentController {
 			int pageSize){
 	    return studentService.getAll(pageNo, pageSize);	
 	}
-	
+	@GetMapping(value="{identity}")
+	public StudentResponse getById(@PathVariable Long identity) {
+		return studentService.findById(identity);
+	}
 	@PostMapping("/addStudent")
 	public StudentResponse addStudent(@RequestBody @Validated StudentAddRequest request) {
 		return studentService.addStudent(request);
@@ -63,6 +66,5 @@ public class StudentController {
 	public StudentResponse deleteById(
 			@PathVariable Long id) {	
 		return studentService.deleteById(id);
-	}
-	
+	}	
 }

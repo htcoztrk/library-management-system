@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,6 +32,10 @@ public class GraduateController {
 	public List<GraduateResponse> getAll(){
 	    return graduateService.findAll();	
 	}
+	@GetMapping("/getbyid/{identity}")
+	public GraduateResponse getById(@PathVariable Long identity){
+	    return graduateService.findById(identity);	
+	}
 	@PostMapping("/addGradute")
 	public GraduateResponse addGraduate(@RequestBody GraduateRequest graduate) {
 		return graduateService.addGraduate(graduate);
@@ -39,5 +44,10 @@ public class GraduateController {
 	public GraduateResponse updateGraduate(@PathVariable Long identity,
 			@RequestBody @Validated GraduateRequest request) {
 		return graduateService.updateGraduate(identity, request);
+	}
+	@DeleteMapping("{identity}")
+	public GraduateResponse deleteById(
+			@PathVariable Long id) {
+		return graduateService.deleteById(id);
 	}
 }
