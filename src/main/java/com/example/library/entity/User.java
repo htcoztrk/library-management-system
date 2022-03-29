@@ -42,6 +42,8 @@ public abstract class User {
 	private int borrowedBookNum;
 	@OneToMany
 	private List<Borrow> borrows;
+	@OneToMany
+	private List<Reservation> reservations;
 	
 	
 }
