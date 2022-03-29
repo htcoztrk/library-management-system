@@ -18,27 +18,16 @@ public class UserServiceImp implements UserService{
 	}
 
 	@Override
-	public Optional add(User user) {
-		var savedUser=userRepository.save(user);
-		return Optional.of(savedUser);
-	}
-
-	@Override
-	public Optional update(User user) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Optional findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+	public User findById(Long id) {
+		return userRepository.findById(id).get();
 	}
 
 	@Override
 	public List<User> findAll() {
 		return userRepository.findAll();
 	}
+
+	
 
 	
 

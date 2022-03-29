@@ -7,8 +7,6 @@ import com.example.library.entity.User;
 
 public interface UserService {
 
-	Optional<User> add(User user);
-	Optional<User> update(User user);
-	Optional<User> findById(int id);
+	User findById(Long id);
 	List<User> findAll();
 }

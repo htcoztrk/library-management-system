@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 public class StudentResponse {
 
 	private Long studentId;
+	private String usertype;
 	private String faculty;
 	private String username;
 	private String password;
