@@ -43,6 +43,8 @@ public abstract class User {
 	private int borrowedBookNum;
 	@OneToMany(mappedBy="user")
 	private List<Borrow> borrows;
+	@OneToMany
+	private List<Reservation> reservations;
 	
 	@OneToMany(mappedBy="user")
 	private List<Reservation> reservations;
