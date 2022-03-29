@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -40,8 +41,9 @@ public abstract class User {
 	private String phone;
 	private LocalDate registeredDate = LocalDate.now();
 	private int borrowedBookNum;
-	@OneToMany
+	@OneToMany(mappedBy="user")
 	private List<Borrow> borrows;
 	
-	
+	@OneToMany(mappedBy="user")
+	private List<Reservation> reservations;
 }
