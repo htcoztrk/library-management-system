@@ -18,12 +18,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="borrows")
+@Table(name="stuff_borrows")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Borrow {
-
+public class StuffBorrow {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -33,11 +33,11 @@ public class Borrow {
 	private LocalDate expectedDeliverDate;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private LocalDate deliveredDate;
-	/*@ManyToOne
-	@JoinColumn(name="userId")
-	private User user;
+	@ManyToOne
+	@JoinColumn(name="stuffId")
+	private Stuff stuff;
 	@ManyToOne
 	@JoinColumn(name="bookId")
-	private Book book;*/
-	
+	private Book book;
 }
+

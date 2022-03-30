@@ -1,6 +1,7 @@
 package com.example.library.entity;
 
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Objects;
 
 import javax.persistence.Entity;
@@ -8,6 +9,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -15,6 +17,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.DynamicUpdate;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -50,10 +53,10 @@ public class Book {
 	private boolean isReserved;
 	
 	
-	/*@JsonIgnore
+	@JsonIgnore
 	@OneToMany(mappedBy = "book")
-	List<Borrow> borrows;
-	
+	List<StudentBorrow> studentBorrows;
+	/*
 	@JsonIgnore
 	@OneToMany(mappedBy = "book")
 	List<Reservation> reservations;*/

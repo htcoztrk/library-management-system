@@ -7,22 +7,24 @@ import org.springframework.stereotype.Service;
 
 import com.example.library.dto.request.BorrowRequest;
 import com.example.library.dto.response.BorrowResponse;
-import com.example.library.entity.Borrow;
-import com.example.library.repository.BorrowRepository;
+import com.example.library.repository.StudentBorrowRepository;
 
 @Service
-public class BorrowService {
+public class StudentBorrowService {
 
-	private final BorrowRepository borrowRepository;
-
+	private final StudentBorrowRepository borrowRepository;
     private final BookService bookService;
 	private final ModelMapper modelMapper;
 
-	public BorrowService(BorrowRepository borrowRepository, BookService bookService,ModelMapper modelMapper) {
+	
+
+	public StudentBorrowService(StudentBorrowRepository borrowRepository, BookService bookService,
+			ModelMapper modelMapper) {
 		this.borrowRepository = borrowRepository;
 		this.bookService = bookService;
-		this.modelMapper=modelMapper;
+		this.modelMapper = modelMapper;
 	}
+
 
 
 	public List<BorrowResponse> getAll() {

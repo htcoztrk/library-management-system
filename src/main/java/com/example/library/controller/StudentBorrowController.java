@@ -12,22 +12,26 @@ import org.springframework.web.context.annotation.RequestScope;
 
 import com.example.library.dto.request.BorrowRequest;
 import com.example.library.dto.response.BorrowResponse;
-import com.example.library.entity.Borrow;
-import com.example.library.service.BorrowService;
+import com.example.library.service.StudentBorrowService;
 
 @RestController
 @RequestMapping("/borrow")
 @RequestScope
 @CrossOrigin
-public class BorrowController {
-	private final BorrowService borrowService;
+public class StudentBorrowController {
+	private final StudentBorrowService studentBorrowService;
 
-	public BorrowController(BorrowService borrowService) {
-		this.borrowService = borrowService;
+	public StudentBorrowController(StudentBorrowService studentBorrowService) {
+		this.studentBorrowService = studentBorrowService;
 	}
+
+
+
+
+
 	@GetMapping("getAll")
 	public List<BorrowResponse> getAll() {
-		return borrowService.getAll();
+		return studentBorrowService.getAll();
 	}
 
 	/*@PostMapping

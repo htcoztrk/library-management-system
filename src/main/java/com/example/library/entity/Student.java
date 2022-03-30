@@ -1,11 +1,16 @@
 package com.example.library.entity;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,6 +19,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name="students")
 public class Student{
 
 	@Id
@@ -30,5 +36,9 @@ public class Student{
 	private int borrowedBookNum;
 	private boolean isActive;
 	private String faculty;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "student")
+	List<StudentBorrow> studentBorrows;
 	
 }

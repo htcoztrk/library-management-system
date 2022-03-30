@@ -66,7 +66,7 @@ public class StudentController {
 	}
 	@DeleteMapping("{identity}")
 	public StudentResponse deleteById(
-			@PathVariable Long id) {	
-		return studentService.deleteById(id);
+			@PathVariable Long identity) {	
+		return studentService.deleteById(identity);
 	}	
 }
