@@ -12,8 +12,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class StudentUpdateRequest {
+<<<<<<< HEAD
 	
 	//private Long id;
+=======
+	//@NotBlank
+	private Long id;
+>>>>>>> 8c2aeb4921d4d8cefd8eefe476ef882cf465bf32
 	@NotBlank
 	private String faculty;
 	@NotBlank
