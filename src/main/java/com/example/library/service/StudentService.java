@@ -35,9 +35,7 @@ public class StudentService {
 
 		var addedStudent = studentRepository.save(ogrenci);
 
-		System.err.println(addedStudent.getUsertype());
-		System.err.println(addedStudent.getName());
-		System.err.println(addedStudent.getUserId());
+	
 		return modelMapper.map(addedStudent, StudentResponse.class);
 	}
 

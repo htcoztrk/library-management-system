@@ -1,8 +1,11 @@
 package com.example.library.dto.request;
 
+import javax.persistence.Enumerated;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+
+import com.example.library.entity.StuffType;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,11 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class StudentUpdateRequest {
-	@NotBlank
-	private Long id;
-	@NotBlank
-	private String faculty;
+public class StuffRequest {
 	@NotBlank
 	private String username;
 	@NotBlank
@@ -32,6 +31,7 @@ public class StudentUpdateRequest {
 	@NotBlank
 	@Pattern(regexp ="[0-9\\s]{11}")
 	private String phone;
-	private boolean isActive;
-	
+	private String sicilNo;
+	@Enumerated
+	private StuffType stuffType;
 }

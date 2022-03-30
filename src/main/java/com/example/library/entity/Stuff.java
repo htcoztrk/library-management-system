@@ -3,6 +3,7 @@ package com.example.library.entity;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,8 +15,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Student{
-
+public class Stuff {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
@@ -28,7 +28,7 @@ public class Student{
 	private String phone;
 	private LocalDate registeredDate = LocalDate.now();
 	private int borrowedBookNum;
-	private boolean isActive;
-	private String faculty;
-	
+	private String sicilNo;
+	@Enumerated
+	private StuffType stuffType;
 }

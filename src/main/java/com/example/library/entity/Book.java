@@ -19,6 +19,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.DynamicUpdate;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
@@ -33,28 +34,21 @@ public class Book {
 	@NotNull(message="name can not be null")
 	@NotBlank(message="name can not be blank")
 	private String  isbn;
-	@ManyToOne()
-	@JoinColumn(name="author_id")
-	private Author author;
-	@NotNull(message="name can not be null")
-	@NotBlank(message="name can not be blank")
-	private String title;
-	@ManyToOne()
-	@JoinColumn(name="category_id")
-	private Category category;
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-	private LocalDate pressDate;
-	@ManyToOne()
-	@JoinColumn(name="publisher_id")
-	private Publisher publisher;
+
+	
+	//@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+	//private LocalDate pressDate;
+
 	@Enumerated
 	private BookType bookType;
 	private boolean isBorrowed;
 	private boolean isReserved;
 	
+	/*@JsonIgnore
 	@OneToMany(mappedBy = "book")
 	List<Borrow> borrows;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "book")
-	List<Reservation> reservations;
+	List<Reservation> reservations;*/
 }

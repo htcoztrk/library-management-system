@@ -29,10 +29,10 @@ public class Reservation {
 	private LocalDate reservedDate;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private LocalDate dueDate;
-	@ManyToOne
+	/*@ManyToOne
 	@JoinColumn(name="book_id")
 	private Book book;
 	@ManyToOne
 	@JoinColumn(name="user_id")
-	private User user;
+	private User user;*/
 }

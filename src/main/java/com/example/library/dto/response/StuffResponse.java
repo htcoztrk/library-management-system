@@ -2,6 +2,10 @@ package com.example.library.dto.response;
 
 import java.time.LocalDate;
 
+import javax.persistence.Enumerated;
+
+import com.example.library.entity.StuffType;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,17 +13,17 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class GraduateResponse {
-	private Long studentId;
-	private String faculty;
+public class StuffResponse {
+	private Long id;
 	private String username;
-	private String password;
 	private String pinCode;
 	private String name;
 	private String surname;
 	private String email;
 	private String phone;
-	private LocalDate registeredDate ;
-	private LocalDate graduatedDate;
-
+	private LocalDate registeredDate;
+	private int borrowedBookNum;
+	private String sicilNo;
+	@Enumerated
+	private StuffType stuffType;
 }

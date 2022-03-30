@@ -21,5 +21,6 @@ public class StudentResponse {
 	private String surname;
 	private String email;
 	private String phone;
+	private boolean isActive;
 	private LocalDate registeredDate ;
 }

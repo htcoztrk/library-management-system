@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.annotation.RequestScope;
 
+import com.example.library.dto.request.BorrowRequest;
 import com.example.library.dto.response.BorrowResponse;
 import com.example.library.entity.Borrow;
 import com.example.library.service.BorrowService;
@@ -29,9 +30,9 @@ public class BorrowController {
 		return borrowService.getAll();
 	}
 
-	@PostMapping
-	public BorrowResponse addBorrow(@RequestBody Borrow borrow) throws Exception {
+	/*@PostMapping
+	public BorrowResponse addBorrow(@RequestBody BorrowRequest borrow) throws Exception {
 		System.err.println("controller");
 		return borrowService.addBorrow(borrow);
-	}
+	}*/
 }

@@ -30,6 +30,7 @@ public class StudentAddRequest {
 	@NotBlank
 	@Pattern(regexp ="[0-9\\s]{11}")
 	private String phone;
+	private boolean isActive;
 //	@NotBlank
 //	private LocalDate registeredDate = LocalDate.now();
 }

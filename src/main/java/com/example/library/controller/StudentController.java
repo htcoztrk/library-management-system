@@ -7,6 +7,7 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -25,8 +26,9 @@ import com.example.library.service.StudentService;
 
 @RestController
 @RequestMapping("/ogrenci")
+@CrossOrigin
 public class StudentController {
-    private StudentService studentService;
+    private final StudentService studentService;
 
 	public StudentController(StudentService studentService) {
 		
