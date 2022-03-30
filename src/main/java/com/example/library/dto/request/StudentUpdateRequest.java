@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class StudentUpdateRequest {
-	@NotBlank
+	//@NotBlank
 	private Long id;
 	@NotBlank
 	private String faculty;
