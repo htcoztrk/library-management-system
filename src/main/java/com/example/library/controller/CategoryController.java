@@ -8,6 +8,8 @@ import com.example.library.service.CategoryService;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.annotation.RequestScope;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/category")
 @RequestScope
@@ -18,6 +20,11 @@ public class CategoryController {
 
     public CategoryController(CategoryService categoryService) {
         this.categoryService = categoryService;
+    }
+
+    @GetMapping(value = "/getall")
+    public List<CategoryResponse> getAll() {
+        return categoryService.getAll();
     }
 
     @PostMapping()
