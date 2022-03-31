@@ -40,4 +40,8 @@ public class Stuff {
 	@JsonIgnore
 	@OneToMany(mappedBy = "stuff")
 	List<StuffBorrow> stuffBorrows;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "stuff")
+	List<StuffReservation> stuffReservations;
 }

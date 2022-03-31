@@ -41,4 +41,7 @@ public class Student{
 	@OneToMany(mappedBy = "student")
 	List<StudentBorrow> studentBorrows;
 	
+	@JsonIgnore
+	@OneToMany(mappedBy = "student")
+	List<StudentReservation> studentReservation;
 }

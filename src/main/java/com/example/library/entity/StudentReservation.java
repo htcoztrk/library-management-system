@@ -18,9 +18,9 @@ import lombok.Data;
 
 @Entity 
 @Data
-@Table(name = "reservations")
+@Table(name = "student_reservation")
 @DynamicUpdate
-public class Reservation {
+public class StudentReservation {
 
 	@Id
 	@GeneratedValue(strategy =GenerationType.IDENTITY )
@@ -29,10 +29,11 @@ public class Reservation {
 	private LocalDate reservedDate;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private LocalDate dueDate;
-	/*@ManyToOne
-	@JoinColumn(name="book_id")
-	private Book book;
 	@ManyToOne
-	@JoinColumn(name="user_id")
-	private User user;*/
+	@JoinColumn(name="studentId")
+	private Student student;
+	@ManyToOne
+	@JoinColumn(name="bookId")
+	private Book book;
+	
 }

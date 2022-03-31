@@ -56,10 +56,10 @@ public class Book {
 	@JsonIgnore
 	@OneToMany(mappedBy = "book")
 	List<StudentBorrow> studentBorrows;
-	/*
+	
 	@JsonIgnore
 	@OneToMany(mappedBy = "book")
-	List<Reservation> reservations;*/
+	List<StudentReservation> studentReservations;
 	
 	@Override
 	public int hashCode() {

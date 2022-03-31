@@ -12,11 +12,10 @@ import com.example.library.dto.request.StudentBorrowRequest;
 import com.example.library.dto.request.StudentUpdateRequest;
 import com.example.library.dto.response.StudentBorrowResponse;
 import com.example.library.entity.Book;
-import com.example.library.entity.BookType;
 import com.example.library.entity.Student;
 import com.example.library.entity.StudentBorrow;
 import com.example.library.repository.StudentBorrowRepository;
-import com.example.library.utilities.rules.BorrowRuleResult;
+import com.example.library.utilities.rules.RuleResult;
 import com.example.library.utilities.rules.StudentBorrowRules;
 
 @Service
@@ -39,9 +38,8 @@ public class StudentBorrowService {
 	public StudentBorrowResponse addStudentBorrow(StudentBorrowRequest request) throws Exception {
 		var student = modelMapper.map(studentService.findById(request.getStudent().getId()), Student.class);
 		var book = modelMapper.map(bookService.getById(request.getBook().getId()), Book.class);
-		BorrowRuleResult result = StudentBorrowRules.borrow(book, student);
-		System.err.println("deneme1:" + result.getMessage());
-
+		RuleResult result = StudentBorrowRules.borrow(book, student);
+		
 		var borrow = modelMapper.map(request, StudentBorrow.class);
 		if (!result.isDecision()) {
 			throw new Exception(result.getMessage());
@@ -61,5 +59,10 @@ public class StudentBorrowService {
 	public List<StudentBorrowResponse> getAll() {
 		return studentBorrowRepository.findAll().stream()
 				.map(borrow -> modelMapper.map(borrow, StudentBorrowResponse.class)).toList();
+	}
+	public StudentBorrowResponse delete(Long id) {
+		var borrow=studentBorrowRepository.findById(id).orElseThrow(()->new EntityNotFoundException());
+		return modelMapper.map(borrow, StudentBorrowResponse.class);
+				
 	}
 }
