@@ -10,33 +10,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.annotation.RequestScope;
 
-import com.example.library.dto.request.BorrowRequest;
-import com.example.library.dto.response.BorrowResponse;
+import com.example.library.dto.request.StudentBorrowRequest;
+import com.example.library.dto.response.StudentBorrowResponse;
 import com.example.library.service.StudentBorrowService;
 
 @RestController
-@RequestMapping("/borrow")
+@RequestMapping("/studentborrow")
 @RequestScope
 @CrossOrigin
 public class StudentBorrowController {
+	
 	private final StudentBorrowService studentBorrowService;
 
 	public StudentBorrowController(StudentBorrowService studentBorrowService) {
 		this.studentBorrowService = studentBorrowService;
 	}
 
-
-
-
-
-	@GetMapping("getAll")
-	public List<BorrowResponse> getAll() {
+    @GetMapping("getAll")
+	public List<StudentBorrowResponse> getAll() {
 		return studentBorrowService.getAll();
 	}
 
-	/*@PostMapping
-	public BorrowResponse addBorrow(@RequestBody BorrowRequest borrow) throws Exception {
-		System.err.println("controller");
-		return borrowService.addBorrow(borrow);
-	}*/
+	@PostMapping
+	public StudentBorrowResponse addBorrow(@RequestBody StudentBorrowRequest borrow) throws Exception {
+		return studentBorrowService.addStudentBorrow(borrow);
+	}
 }

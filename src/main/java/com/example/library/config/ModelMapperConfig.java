@@ -1,12 +1,8 @@
 package com.example.library.config;
 
-import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import com.example.library.dto.request.BorrowRequest;
-import com.example.library.entity.StudentBorrow;
 
 @Configuration
 public class ModelMapperConfig {
@@ -31,7 +27,7 @@ public class ModelMapperConfig {
 		return response;
 
 	};*/
-	private static final Converter<BorrowRequest,StudentBorrow> 
+	/*private static final Converter<BorrowRequest,StudentBorrow> 
 	CONVERT_BORROW_REQUEST_TO_BORROW = (context) -> {
 		System.err.println("model mapper baslangic");
 		var request = context.getSource();
@@ -44,7 +40,7 @@ public class ModelMapperConfig {
 		
 		return borrow;
 
-	};
+	};*/
 //	private static final Converter<Student, StudentAddResponse> 
 //		STUDENT_TO_STUDENT_RESPONSE = (context) -> {
 //			var response = new StudentAddResponse();
@@ -60,7 +56,7 @@ public class ModelMapperConfig {
 		//mapper.addConverter(CONVERT_AUTHOR_REQUEST_TO_AUTHOR, AuthorRequest.class, Author.class);
 		//mapper.addConverter(CONVERT_AUTHOR_TO_AUTHOR_RESPONSE, Author.class, AuthorResponse.class);
 //		mapper.addConverter(STUDENT_TO_STUDENT_RESPONSE, Student.class, StudentAddResponse.class);
-		mapper.addConverter(CONVERT_BORROW_REQUEST_TO_BORROW,BorrowRequest.class,StudentBorrow.class);
+		//mapper.addConverter(CONVERT_BORROW_REQUEST_TO_BORROW,BorrowRequest.class,StudentBorrow.class);
 		return mapper;
 	}
 	
