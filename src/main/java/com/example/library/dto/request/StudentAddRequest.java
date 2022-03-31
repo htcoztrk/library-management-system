@@ -31,6 +31,7 @@ public class StudentAddRequest {
 	@Pattern(regexp ="[0-9\\s]{11}")
 	private String phone;
 	private boolean isActive;
+	private int borrowedBookNum;
 //	@NotBlank
 //	private LocalDate registeredDate = LocalDate.now();
 }

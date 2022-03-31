@@ -34,6 +34,7 @@ public class StudentUpdateRequest {
 	@NotBlank
 	@Pattern(regexp ="[0-9\\s]{11}")
 	private String phone;
+	private int borrowedBookNum;
 	private boolean isActive;
 	
 }
