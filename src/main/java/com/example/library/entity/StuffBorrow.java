@@ -32,6 +32,7 @@ public class StuffBorrow {
 	private LocalDate expectedDeliverDate;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private LocalDate deliveredDate;
+	private boolean isActive;
 	@ManyToOne
 	@JoinColumn(name="stuffId")
 	private Stuff stuff;

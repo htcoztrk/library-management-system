@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import com.example.library.dto.request.StudentBorrowRequest;
 import com.example.library.dto.request.StudentUpdateRequest;
 import com.example.library.dto.response.StudentBorrowResponse;
+import com.example.library.dto.response.StudentReservationResponse;
 import com.example.library.entity.Book;
 import com.example.library.entity.Student;
 import com.example.library.entity.StudentBorrow;
@@ -60,9 +61,22 @@ public class StudentBorrowService {
 		return studentBorrowRepository.findAll().stream()
 				.map(borrow -> modelMapper.map(borrow, StudentBorrowResponse.class)).toList();
 	}
+	@Transactional
+	public StudentBorrowResponse deActiveBorrow(Long id) {
+		var borrow = studentBorrowRepository.findById(id).orElseThrow(() -> new EntityNotFoundException());
+		borrow.setActive(false);
+		return modelMapper.map(borrow, StudentBorrowResponse.class);
+
+	}
+	@Transactional
 	public StudentBorrowResponse delete(Long id) {
 		var borrow=studentBorrowRepository.findById(id).orElseThrow(()->new EntityNotFoundException());
+		studentBorrowRepository.deleteById(id);
 		return modelMapper.map(borrow, StudentBorrowResponse.class);
 				
 	}
 }
+
+
+
+

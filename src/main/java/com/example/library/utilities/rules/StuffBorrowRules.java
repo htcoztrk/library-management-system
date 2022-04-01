@@ -7,7 +7,7 @@ import com.example.library.entity.StuffType;
 
 public class StuffBorrowRules {
 
-	public RuleResult borrow(Book book,Stuff stuff) {
+	public static RuleResult borrow(Book book,Stuff stuff) {
 		if(stuff.getStuffType().equals(StuffType.INSTRUCTOR)&&stuff.getBorrowedBookNum()==5)
 			return new RuleResult(false,"Already has 5 books", null);
 		if(stuff.getStuffType().equals(StuffType.OFFICER)&&stuff.getBorrowedBookNum()==3)

@@ -29,6 +29,7 @@ public class StuffReservation {
 	private LocalDate reservedDate;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private LocalDate dueDate;
+	private boolean isActive;
 	@ManyToOne
 	@JoinColumn(name="stuffId")
 	private Stuff stuff;
