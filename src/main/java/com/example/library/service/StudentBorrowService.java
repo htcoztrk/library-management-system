@@ -48,6 +48,7 @@ public class StudentBorrowService {
 		}
 		student.setBorrowedBookNum(student.getBorrowedBookNum() + 1);
 		book.setBorrowed(true);
+		borrow.setDeliveredDate(borrow.getDeliveredDate().plusDays(15));
 		studentService.updateStudent(student.getId(), modelMapper.map(student, StudentUpdateRequest.class));
 		bookService.update(book.getId(), modelMapper.map(book, BookRequest.class));
 		return modelMapper.map(studentBorrowRepository.save(borrow), StudentBorrowResponse.class);
