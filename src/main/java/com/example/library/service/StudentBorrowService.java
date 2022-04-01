@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import com.example.library.dto.request.BookRequest;
 import com.example.library.dto.request.StudentBorrowRequest;
 import com.example.library.dto.request.StudentUpdateRequest;
 import com.example.library.dto.response.StudentBorrowResponse;
@@ -48,6 +49,7 @@ public class StudentBorrowService {
 		student.setBorrowedBookNum(student.getBorrowedBookNum() + 1);
 		book.setBorrowed(true);
 		studentService.updateStudent(student.getId(), modelMapper.map(student, StudentUpdateRequest.class));
+		bookService.update(book.getId(), modelMapper.map(book, BookRequest.class));
 		return modelMapper.map(studentBorrowRepository.save(borrow), StudentBorrowResponse.class);
 	}
 

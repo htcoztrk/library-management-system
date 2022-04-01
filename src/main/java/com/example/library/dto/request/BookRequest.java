@@ -22,6 +22,7 @@ public class BookRequest {
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private LocalDate pressDate;
 	private BookType bookType;
+	private String title;
 	private boolean isBorrowed;
 	private boolean isReserved;
 	

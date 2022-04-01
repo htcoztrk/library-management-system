@@ -13,6 +13,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class StudentBorrowResponse {
 
+	private Long id;
+	private boolean isActive;
 	private LocalDate borrowedDate;
 	private LocalDate expectedDeliverDate;
 	private LocalDate deliveredDate;

@@ -22,6 +22,7 @@ public class BookResponse {
 	private String publisher;
 	private LocalDate pressDate;
 	private BookType bookType;
+	private String title;
 	private boolean isBorrowed;
 	private boolean isReserved;
 	

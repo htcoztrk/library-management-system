@@ -44,6 +44,7 @@ public class Book {
 	private String category;
 	private String publisher;
 
+	private String title;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	private LocalDate pressDate;
 
